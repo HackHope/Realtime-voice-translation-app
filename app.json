@@ -38,7 +38,8 @@
             "backgroundColor": "#000000"
           }
         }
-      ]
+      ],
+      "react-native-pytorch-core"
     ],
     "experiments": {
       "typedRoutes": true,
