@@ -1,4 +1,13 @@
-const { getDefaultConfig } = require('@expo/metro-config');
-const defaultConfig = getDefaultConfig(__dirname);
-defaultConfig.resolver.assetExts.push('onnx');
-module.exports = defaultConfig;
+// metro.config.js
+const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
+
+const config = {
+    resolver: {
+        assetExts: ['bin', 'txt', 'jpg', 'png', 'json', 'onnx', 'wav'],
+    },
+    transformer: {
+        assetPlugins: ['expo-asset/tools/hashAssetFiles'],
+    },
+};
+
+module.exports = mergeConfig(getDefaultConfig(__dirname), config);
